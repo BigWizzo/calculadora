@@ -15,3 +15,9 @@ code {
 .container {
   text-align: center;
 }
+
+.group{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
