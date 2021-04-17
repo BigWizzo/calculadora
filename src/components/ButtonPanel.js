@@ -2,11 +2,9 @@ import Button from './Button';
 import { data } from './Data';
 
 const ButtonPanel = () => (
-  <div>
-    {data.map((groups) => groups.group.map((group) => (
-      <Button buttonName={group} key={groups.group.index} />
-    )))}
-  </div>
+  data.map((groups) => groups.group.map((group) => (
+    <Button className="letssee" buttonName={group} key={groups.group.index} />
+  )))
 );
 
 export default ButtonPanel;
