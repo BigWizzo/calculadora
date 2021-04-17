@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Button = ({ buttonName }) => <div>{buttonName}</div>;
+const Button = ({ buttonName }) => <button type="button">{buttonName}</button>;
 
 Button.propTypes = {
   buttonName: PropTypes.string,
