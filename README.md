@@ -1,6 +1,6 @@
 # Calculator App: Calculadora
 
-- A Calculator Application build with React using functional components
+- A Calculator Application build with React.
 
 ## Live Demo
 
