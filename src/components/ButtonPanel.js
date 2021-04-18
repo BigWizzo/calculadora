@@ -8,27 +8,27 @@ const group5 = [0, '.', '='];
 
 const ButtonPanel = () => (
   <>
-    <div className="group">
+    <div>
       {group1.map((item) => (
         <Button buttonName={item} key={item.index} />
       ))}
     </div>
-    <div className="group">
+    <div>
       {group2.map((item) => (
         <Button buttonName={item} key={item.index} />
       ))}
     </div>
-    <div className="group">
+    <div>
       {group3.map((item) => (
         <Button buttonName={item} key={item.index} />
       ))}
     </div>
-    <div className="group">
+    <div>
       {group4.map((item) => (
         <Button buttonName={item} key={item.index} />
       ))}
     </div>
-    <div className="group">
+    <div>
       {group5.map((item) => (
         <Button buttonName={item} key={item.index} />
       ))}
