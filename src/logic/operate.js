@@ -22,7 +22,7 @@ const operate = (numberOne, numberTwo, operation) => {
       total = firstNum.plus(secondNum);
       break;
     default:
-      total = 'Error: Cannot Perform operation';
+      total = 'impossible operation';
       break;
   }
   return total.toString();
