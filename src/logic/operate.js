@@ -7,19 +7,19 @@ const operate = (numberOne, numberTwo, operation) => {
 
   switch (operation) {
     case '%':
-      total = ((secondNum / 100) * firstNum);
+      total = firstNum.mod(secondNum);
       break;
     case '÷':
-      total = (firstNum / secondNum);
+      total = firstNum.div(secondNum);
       break;
     case '*':
-      total = (firstNum * secondNum);
+      total = firstNum.times(secondNum);
       break;
     case '-':
-      total = (firstNum - secondNum);
+      total = firstNum.minus(secondNum);
       break;
     case '+':
-      total = (firstNum + secondNum);
+      total = firstNum.plus(secondNum);
       break;
     default:
       total = 'Error: Cannot Perform operation';
