@@ -3,28 +3,28 @@ import Big from 'big.js';
 const operate = (numberOne, numberTwo, operation) => {
   const firstNum = Big(numberOne);
   const secondNum = Big(numberTwo);
-  let result = 0;
+  let total = 0;
 
   switch (operation) {
     case '%':
-      result = ((secondNum / 100) * firstNum);
+      total = ((secondNum / 100) * firstNum);
       break;
     case '÷':
-      result = (firstNum / secondNum);
+      total = (firstNum / secondNum);
       break;
     case '*':
-      result = (firstNum * secondNum);
+      total = (firstNum * secondNum);
       break;
     case '-':
-      result = (firstNum - secondNum);
+      total = (firstNum - secondNum);
       break;
     case '+':
-      result = (firstNum + secondNum);
+      total = (firstNum + secondNum);
       break;
     default:
-      result = 'Error: Cannot Perform operation';
+      total = 'Error: Cannot Perform operation';
       break;
   }
-  return result.toString();
+  return total.toString();
 };
 export default operate;

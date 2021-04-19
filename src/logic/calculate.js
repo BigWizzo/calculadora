@@ -1,16 +1,12 @@
 import operate from './operate';
 
-const calculate = ({ total, next, operation }) => {
-  if (operation === '+/-') {
-    const newTotal = (total) * -1;
-    const newNext = (next) * -1;
-    return { total: newTotal, next: newNext };
+const calculate = ({ total, next, operation }, buttonName) => {
+  if (buttonName === '+/-') {
+    const negTotal = (total) * -1;
+    const negNext = (next) * -1;
+    return { total: negTotal, next: negNext };
   }
-  if (operation === '+'
-  || operation === '-'
-  || operation === 'X'
-  || operation === '%'
-  || operation === '÷') {
+  if (buttonName === '%' || buttonName === '÷' || buttonName === 'X' || buttonName === '-' || buttonName === '+') {
     const totalResult = operate(total, next, operation);
     return { total: totalResult.toString() };
   }

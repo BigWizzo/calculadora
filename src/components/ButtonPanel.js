@@ -2,23 +2,23 @@ import Button from './Button';
 
 const groups = [
   {
-    buttonName: 'group1',
+    groupName: 'group1',
     buttonValues: ['AC', '+/-', '%', ' ÷'],
   },
   {
-    buttonName: 'group2',
+    groupName: 'group2',
     buttonValues: ['7', '8', '9', 'X'],
   },
   {
-    buttonName: 'group3',
+    groupName: 'group3',
     buttonValues: ['4', '5', '6', '-'],
   },
   {
-    buttonName: 'group4',
+    groupName: 'group4',
     buttonValues: ['1', '2', '3', '+'],
   },
   {
-    buttonName: 'group5',
+    groupName: 'group5',
     buttonValues: ['0', '.', '='],
   },
 ];
@@ -27,7 +27,7 @@ const ButtonPanel = () => (
   <>
     <div>
       {groups.map((group) => (
-        <div key={group.buttonName}>
+        <div key={group.groupName}>
           {group.buttonValues.map((value) => <Button buttonName={value} key={value} />)}
         </div>
       ))}
