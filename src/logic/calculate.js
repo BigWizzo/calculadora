@@ -6,6 +6,12 @@ const calculate = ({ total, next, operation }, buttonName) => {
     const negNext = (next) * -1;
     return { total: negTotal, next: negNext };
   }
+  if (buttonName === 'AC') {
+    return { total: 0, next: 0, operation: null };
+  }
+  if (buttonName === '.') {
+    return { total: '0.' };
+  }
   if (buttonName === '%' || buttonName === '÷' || buttonName === 'X' || buttonName === '-' || buttonName === '+') {
     const totalResult = operate(total, next, operation);
     return { total: totalResult.toString() };
