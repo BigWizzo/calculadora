@@ -6,7 +6,7 @@ import calculate from '../logic/calculate';
 function App() {
   return (
     <>
-      <h1>Milestone Three</h1>
+      <h1>Calculadora: Milestone Five</h1>
       <Display result="0" />
       <ButtonPanel />
     </>
