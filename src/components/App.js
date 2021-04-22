@@ -1,7 +1,7 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-import calculate from '../logic/calculate';
+import Calculate from '../logic/calculate';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,19 +11,33 @@ class App extends React.Component {
       next: null,
       operation: null,
     };
-    this.handleClick = (buttonName) => {
-      const result = calculate(this.state, buttonName);
-      this.setState(result);
-    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(operation) {
+    const stateResult = Calculate(this.state, operation);
+    this.setState(stateResult);
   }
 
   render() {
+    const { total, next, operation } = this.state;
+    let display = '0';
+    if (next) {
+      display = `${total}${operation}${next}`;
+    } else if ((operation && operation !== '=') && total) {
+      display = `${total}${operation}`;
+    } else {
+      display = total || '0';
+    }
+
     return (
-      <div className="App">
-        <h1>Milestone 5: Stateful</h1>
-        <Display />
-        <ButtonPanel />
-      </div>
+      <>
+        <div>
+          <h1>Calculadora: Milestone 5 - Stateful</h1>
+          <Display result={display} />
+          <ButtonPanel onClick={this.handleClick} />
+        </div>
+      </>
     );
   }
 }
