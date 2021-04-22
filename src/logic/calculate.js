@@ -3,6 +3,7 @@ import Operate from './operate';
 const Calculate = (calculatorData, btnName) => {
   const { total, next, operation } = calculatorData;
 
+  console.log(operation);
   switch (btnName) {
     case '0':
     case '1':
@@ -23,18 +24,14 @@ const Calculate = (calculatorData, btnName) => {
       return { total: null, next: null, operation: null };
 
     case '+/-':
-      if (next) {
+      if (btnName === '+/-') {
         return {
-          total,
-          next: Operate(next, '-1', 'x'),
-          operation,
+          total: total * -1,
+          next: next * -1,
+          operation: null,
         };
       }
-      return {
-        total: Operate(total, '-1', 'x'),
-        next,
-        operation,
-      };
+      break;
 
     case '.':
       if (operation) {
