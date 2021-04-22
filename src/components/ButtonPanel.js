@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 const groups = [
@@ -23,16 +24,28 @@ const groups = [
   },
 ];
 
-const ButtonPanel = () => (
-  <>
-    <div>
-      {groups.map((group) => (
-        <div key={group.groupName}>
-          {group.buttonValues.map((value) => <Button buttonName={value} key={value} />)}
-        </div>
-      ))}
-    </div>
-  </>
-);
+const ButtonPanel = ({ onClick }) => {
+  const handleClick = (buttonName) => {
+    onClick(buttonName);
+  };
+
+  return (
+    <>
+      <div>
+        {groups.map((group) => (
+          <div key={group.groupName}>
+            {group.buttonValues.map((value) => (
+              <Button buttonName={value} key={value} handleOnClick={handleClick} />
+            ))}
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+ButtonPanel.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 
 export default ButtonPanel;
