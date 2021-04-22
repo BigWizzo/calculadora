@@ -1,7 +1,6 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-// eslint-disable-next-line no-unused-vars
 import calculate from '../logic/calculate';
 
 class App extends React.Component {
@@ -19,12 +18,11 @@ class App extends React.Component {
   }
 
   render() {
-    const { next } = this.state;
     return (
       <div className="App">
         <h1>Milestone 5: Stateful</h1>
-        <Display displayValue={next} />
-        <ButtonPanel clickHandler={this.handleClick} />
+        <Display />
+        <ButtonPanel />
       </div>
     );
   }
