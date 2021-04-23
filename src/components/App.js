@@ -1,9 +1,9 @@
 import React from 'react';
 import Display from './Display';
-import ButtonPanel from './ButtonPanel';
-import Calculate from '../logic/calculate';
+import Buttonspanel from './ButtonPanel';
+import calculate from '../logic/calculate';
 
-class App extends React.Component {
+export default class APP extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,32 +14,28 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(operation) {
-    const stateResult = Calculate(this.state, operation);
-    this.setState(stateResult);
+  handleClick(buttonName) {
+    this.setState((state) => {
+      const { total, next, operation } = state;
+      return calculate({ total, next, operation }, buttonName);
+    });
   }
 
   render() {
-    const { total, next, operation } = this.state;
-    let display = '0';
-    if (next) {
-      display = `${total}${operation}${next}`;
-    } else if ((operation && operation !== '=') && total) {
-      display = `${total}${operation}`;
+    const { next, total } = this.state;
+    let result;
+    if (next !== null) {
+      result = next;
+    } else if (total !== null) {
+      result = total;
     } else {
-      display = total || '0';
+      result = '0';
     }
-
     return (
       <>
-        <div>
-          <h1>Calculadora: Milestone 5 - Stateful</h1>
-          <Display result={display} />
-          <ButtonPanel onClick={this.handleClick} />
-        </div>
+        <Display result={result} />
+        <Buttonspanel clickHandler={this.handleClick} />
       </>
     );
   }
 }
-
-export default App;
