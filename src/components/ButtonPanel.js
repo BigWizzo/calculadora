@@ -35,7 +35,7 @@ const ButtonPanel = ({ onClick }) => {
         {groups.map((group) => (
           <div key={group.groupName}>
             {group.buttonValues.map((value) => (
-              <Button name={value} key={value} handleOnClick={handleClick} />
+              <Button buttonName={value} key={value} handleOnClick={handleClick} />
             ))}
           </div>
         ))}
