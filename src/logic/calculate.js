@@ -1,9 +1,22 @@
 import Operate from './operate';
 
-const Calculate = (calculatorData, buttonName) => {
-  const { total, next, operation } = calculatorData;
-
+const Calculate = ({ total, next, operation }, buttonName) => {
   switch (buttonName) {
+    case 'AC':
+      return { total: null, next: null, operation: null };
+    case '+/-':
+      if (next) {
+        return {
+          total,
+          next: Operate(next, '-1', 'x'),
+          operation,
+        };
+      }
+      return {
+        total: Operate(total, '-1', 'x'),
+        next,
+        operation,
+      };
     case '0':
     case '1':
     case '2':
@@ -18,23 +31,6 @@ const Calculate = (calculatorData, buttonName) => {
         return { total, next: next ? next + buttonName : buttonName, operation };
       }
       return { total: total ? total + buttonName : buttonName, next, operation };
-
-    case 'AC':
-      return { total: null, next: null, operation: null };
-
-    case '+/-':
-      if (next) {
-        return {
-          total,
-          next: Operate(next, '-1', 'x'),
-          operation,
-        };
-      }
-      return {
-        total: Operate(total, '-1', 'x'),
-        next,
-        operation,
-      };
 
     case '.':
       if (operation) {
@@ -51,7 +47,7 @@ const Calculate = (calculatorData, buttonName) => {
     case '=':
       if (operation === '÷' && next === '0') {
         return {
-          total: 'there is no division by zero',
+          total: 'No zero division',
           next: null,
           operation: null,
         };
@@ -63,7 +59,7 @@ const Calculate = (calculatorData, buttonName) => {
     case '%':
       if (total) {
         return {
-          total: next ? ((Operate(total, next, operation)) / 100) : 'expression error',
+          total: next ? ((Operate(total, next, operation)) / 100) : 'impossible',
           next: null,
           operation: null,
         };
@@ -72,7 +68,7 @@ const Calculate = (calculatorData, buttonName) => {
     default:
       if (operation) {
         return {
-          total: next ? Operate(total, next, operation) : 'expression error',
+          total: next ? Operate(total, next, operation) : 'impossible',
           next: null,
           operation: buttonName,
         };
