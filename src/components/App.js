@@ -33,6 +33,7 @@ class App extends React.Component {
     return (
       <>
         <div>
+          <h1>Calculadora: Milestone 5 - Stateful</h1>
           <Display result={result} />
           <ButtonPanel onClick={this.handleClick} />
         </div>
