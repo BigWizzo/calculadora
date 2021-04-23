@@ -1,9 +1,9 @@
-import { Component } from 'react';
+import React from 'react';
 import Display from './Display';
-import ButtonPannel from './ButtonPanel';
+import ButtonPanel from './ButtonPanel';
 import Calculate from '../logic/calculate';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,7 +34,7 @@ class App extends Component {
       <>
         <div>
           <Display result={display} />
-          <ButtonPannel onClick={this.handleClick} />
+          <ButtonPanel onClick={this.handleClick} />
         </div>
       </>
     );

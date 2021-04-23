@@ -1,10 +1,6 @@
-import React from 'react';
-import '../index.css';
 import PropTypes from 'prop-types';
 
-const Display = ({ result }) => (
-  <div>{result}</div>
-);
+const Display = ({ result }) => <div>{result}</div>;
 
 Display.propTypes = {
   result: PropTypes.string,
