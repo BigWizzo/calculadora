@@ -3,7 +3,11 @@ import Operate from './operate';
 const Calculate = ({ total, next, operation }, buttonName) => {
   switch (buttonName) {
     case 'AC':
-      return { total: null, next: null, operation: null };
+      return {
+        total: null,
+        next: null,
+        operation: null,
+      };
     case '+/-':
       if (next) {
         return {
@@ -28,21 +32,45 @@ const Calculate = ({ total, next, operation }, buttonName) => {
     case '8':
     case '9':
       if (operation) {
-        return { total, next: next ? next + buttonName : buttonName, operation };
+        return {
+          total,
+          next: next ? next + buttonName : buttonName,
+          operation,
+        };
       }
-      return { total: total ? total + buttonName : buttonName, next, operation };
+      return {
+        total: total ? total + buttonName : buttonName,
+        next,
+        operation,
+      };
 
     case '.':
       if (operation) {
         if (next) {
-          return { total, next: next + buttonName, operation };
+          return {
+            total,
+            next: next + buttonName,
+            operation,
+          };
         }
-        return { total, next: `0${buttonName}`, operation };
+        return {
+          total,
+          next: `0${buttonName}`,
+          operation,
+        };
       }
       if (total) {
-        return { total: total + buttonName, next, operation };
+        return {
+          total: total + buttonName,
+          next,
+          operation,
+        };
       }
-      return { total: `0${buttonName}`, next, operation };
+      return {
+        total: `0${buttonName}`,
+        next,
+        operation,
+      };
 
     case '=':
       if (operation === '÷' && next === '0') {
