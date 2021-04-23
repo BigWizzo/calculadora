@@ -4,7 +4,7 @@ import Button from './Button';
 const groups = [
   {
     groupName: 'group1',
-    buttonValues: ['AC', '+/-', '%', ' ÷'],
+    buttonValues: ['AC', '+/-', '%', '÷'],
   },
   {
     groupName: 'group2',
