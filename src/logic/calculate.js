@@ -87,7 +87,7 @@ const Calculate = ({ total, next, operation }, buttonName) => {
     case '%':
       if (total) {
         return {
-          total: next ? ((Operate(total, next, operation)) / 100) : 'impossible',
+          total: total * (next / 100),
           next: null,
           operation: null,
         };
