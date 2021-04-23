@@ -24,7 +24,6 @@ class App extends React.Component {
     let display = '0';
     if (next) {
       display = `${total}${operation}${next}`;
-      console.log(display);
     } else if ((operation && operation !== '=') && total) {
       display = `${total}${operation}`;
     } else {
