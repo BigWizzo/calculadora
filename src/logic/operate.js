@@ -12,7 +12,7 @@ const operate = (numberOne, numberTwo, operation) => {
     case '÷':
       total = firstNum.div(secondNum);
       break;
-    case '*':
+    case 'x':
       total = firstNum.times(secondNum);
       break;
     case '-':

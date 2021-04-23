@@ -8,7 +8,7 @@ const groups = [
   },
   {
     groupName: 'group2',
-    buttonValues: ['7', '8', '9', '*'],
+    buttonValues: ['7', '8', '9', 'x'],
   },
   {
     groupName: 'group3',
