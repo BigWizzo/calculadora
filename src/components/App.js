@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component } from 'react';
 import Display from './Display';
-import Buttonspanel from './ButtonPanel';
-import calculate from '../logic/calculate';
+import ButtonPannel from './ButtonPanel';
+import Calculate from '../logic/calculate';
 
-export default class APP extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,28 +14,31 @@ export default class APP extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(buttonName) {
-    this.setState((state) => {
-      const { total, next, operation } = state;
-      return calculate({ total, next, operation }, buttonName);
-    });
+  handleClick(operation) {
+    const stateResult = Calculate(this.state, operation);
+    this.setState(stateResult);
   }
 
   render() {
-    const { next, total } = this.state;
-    let result;
-    if (next !== null) {
-      result = next;
-    } else if (total !== null) {
-      result = total;
+    const { total, next, operation } = this.state;
+    let display = '0';
+    if (next) {
+      display = `${total}${operation}${next}`;
+    } else if ((operation && operation !== '=') && total) {
+      display = `${total}${operation}`;
     } else {
-      result = '0';
+      display = total || '0';
     }
+
     return (
       <>
-        <Display result={result} />
-        <Buttonspanel clickHandler={this.handleClick} />
+        <div>
+          <Display result={display} />
+          <ButtonPannel onClick={this.handleClick} />
+        </div>
       </>
     );
   }
 }
+
+export default App;

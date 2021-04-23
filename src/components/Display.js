@@ -1,9 +1,9 @@
+import React from 'react';
+import '../index.css';
 import PropTypes from 'prop-types';
 
 const Display = ({ result }) => (
-  <div>
-    {result}
-  </div>
+  <div>{result}</div>
 );
 
 Display.propTypes = {

@@ -63,7 +63,7 @@ const Calculate = (calculatorData, btnName) => {
     case '%':
       if (total) {
         return {
-          total: next ? ((Operate(total, next, operation)) / 100) : '% expression error',
+          total: next ? ((Operate(total, next, operation)) / 100) : 'expression error',
           next: null,
           operation: null,
         };
