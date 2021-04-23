@@ -1,9 +1,9 @@
 import Operate from './operate';
 
-const Calculate = (calculatorData, btnName) => {
+const Calculate = (calculatorData, buttonName) => {
   const { total, next, operation } = calculatorData;
 
-  switch (btnName) {
+  switch (buttonName) {
     case '0':
     case '1':
     case '2':
@@ -15,9 +15,9 @@ const Calculate = (calculatorData, btnName) => {
     case '8':
     case '9':
       if (operation) {
-        return { total, next: next ? next + btnName : btnName, operation };
+        return { total, next: next ? next + buttonName : buttonName, operation };
       }
-      return { total: total ? total + btnName : btnName, next, operation };
+      return { total: total ? total + buttonName : buttonName, next, operation };
 
     case 'AC':
       return { total: null, next: null, operation: null };
@@ -39,14 +39,14 @@ const Calculate = (calculatorData, btnName) => {
     case '.':
       if (operation) {
         if (next) {
-          return { total, next: next + btnName, operation };
+          return { total, next: next + buttonName, operation };
         }
-        return { total, next: `0${btnName}`, operation };
+        return { total, next: `0${buttonName}`, operation };
       }
       if (total) {
-        return { total: total + btnName, next, operation };
+        return { total: total + buttonName, next, operation };
       }
-      return { total: `0${btnName}`, next, operation };
+      return { total: `0${buttonName}`, next, operation };
 
     case '=':
       if (operation === '÷' && next === '0') {
@@ -74,13 +74,13 @@ const Calculate = (calculatorData, btnName) => {
         return {
           total: next ? Operate(total, next, operation) : 'expression error',
           next: null,
-          operation: btnName,
+          operation: buttonName,
         };
       }
       return {
         total,
         next: null,
-        operation: btnName,
+        operation: buttonName,
       };
   }
   return { total, next, operation };

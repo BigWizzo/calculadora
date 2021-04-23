@@ -15,25 +15,25 @@ class App extends React.Component {
   }
 
   handleClick(operation) {
-    const stateResult = Calculate(this.state, operation);
-    this.setState(stateResult);
+    const calcResult = Calculate(this.state, operation);
+    this.setState(calcResult);
   }
 
   render() {
     const { total, next, operation } = this.state;
-    let display = '0';
+    let result = '0';
     if (next) {
-      display = `${total}${operation}${next}`;
+      result = `${total}${operation}${next}`;
     } else if ((operation && operation !== '=') && total) {
-      display = `${total}${operation}`;
+      result = `${total}${operation}`;
     } else {
-      display = total || '0';
+      result = total || '0';
     }
 
     return (
       <>
         <div>
-          <Display result={display} />
+          <Display result={result} />
           <ButtonPanel onClick={this.handleClick} />
         </div>
       </>
