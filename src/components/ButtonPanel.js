@@ -1,7 +1,28 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import '../index.css';
 import Button from './Button';
+
+const groups = [
+  {
+    groupName: 'group1',
+    buttonValues: ['AC', '+/-', '%', ' ÷'],
+  },
+  {
+    groupName: 'group2',
+    buttonValues: ['7', '8', '9', 'x'],
+  },
+  {
+    groupName: 'group3',
+    buttonValues: ['4', '5', '6', '-'],
+  },
+  {
+    groupName: 'group4',
+    buttonValues: ['1', '2', '3', '+'],
+  },
+  {
+    groupName: 'group5',
+    buttonValues: ['0', '.', '='],
+  },
+];
 
 const ButtonPanel = ({ onClick }) => {
   const handleClick = (buttonName) => {
@@ -11,35 +32,14 @@ const ButtonPanel = ({ onClick }) => {
   return (
     <>
       <div>
-        <Button name="AC" handleOnClick={handleClick} />
-        <Button name="+/-" handleOnClick={handleClick} />
-        <Button name="%" handleOnClick={handleClick} />
-        <Button name="÷" handleOnClick={handleClick} />
+        {groups.map((group) => (
+          <div key={group.groupName}>
+            {group.buttonValues.map((value) => (
+              <Button name={value} key={value} handleOnClick={handleClick} />
+            ))}
+          </div>
+        ))}
       </div>
-      <div>
-        <Button name="7" handleOnClick={handleClick} />
-        <Button name="8" handleOnClick={handleClick} />
-        <Button name="9" handleOnClick={handleClick} />
-        <Button name="x" handleOnClick={handleClick} />
-      </div>
-      <div>
-        <Button name="4" handleOnClick={handleClick} />
-        <Button name="5" handleOnClick={handleClick} />
-        <Button name="6" handleOnClick={handleClick} />
-        <Button name="-" handleOnClick={handleClick} />
-      </div>
-      <div>
-        <Button name="1" handleOnClick={handleClick} />
-        <Button name="2" handleOnClick={handleClick} />
-        <Button name="3" handleOnClick={handleClick} />
-        <Button name="+" handleOnClick={handleClick} />
-      </div>
-      <div>
-        <Button name="0" handleOnClick={handleClick} />
-        <Button name="." handleOnClick={handleClick} />
-        <Button name="=" handleOnClick={handleClick} />
-      </div>
-
     </>
   );
 };
