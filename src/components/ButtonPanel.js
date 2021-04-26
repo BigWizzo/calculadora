@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 const groups = [
   {
     groupName: 'group1',
-    buttonValues: ['AC', '+/-', '%', ' ÷'],
+    buttonValues: ['AC', '+/-', '%', '÷'],
   },
   {
     groupName: 'group2',
@@ -23,16 +24,24 @@ const groups = [
   },
 ];
 
-const ButtonPanel = () => (
-  <>
+const ButtonPanel = ({ onClick }) => {
+  const clickHandler = (buttonName) => onClick(buttonName);
+
+  return (
     <div>
       {groups.map((group) => (
         <div key={group.groupName}>
-          {group.buttonValues.map((value) => <Button buttonName={value} key={value} />)}
+          {group.buttonValues.map((value) => (
+            <Button buttonName={value} key={value} onClick={clickHandler} />
+          ))}
         </div>
       ))}
     </div>
-  </>
-);
+  );
+};
+
+ButtonPanel.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 
 export default ButtonPanel;

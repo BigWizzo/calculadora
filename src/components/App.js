@@ -1,16 +1,42 @@
+import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-// eslint-disable-next-line no-unused-vars
 import calculate from '../logic/calculate';
 
-function App() {
-  return (
-    <>
-      <h1>Milestone Three</h1>
-      <Display result="0" />
-      <ButtonPanel />
-    </>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      total: '',
+      next: '',
+      operation: '',
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(operation) {
+    const calcResult = calculate(this.state, operation);
+    this.setState(calcResult);
+  }
+
+  render() {
+    const { total, next, operation } = this.state;
+    let result = '0';
+    if (next) {
+      result = `${total}${operation}${next}`;
+    } else if ((operation && operation !== '=') && total) {
+      result = `${total}${operation}`;
+    } else if ((total && !next) || (operation === '=')) {
+      result = total;
+    }
+
+    return (
+      <div>
+        <Display result={result} />
+        <ButtonPanel onClick={this.handleClick} />
+      </div>
+    );
+  }
 }
 
 export default App;

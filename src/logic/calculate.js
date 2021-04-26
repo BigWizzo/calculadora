@@ -1,22 +1,44 @@
 import operate from './operate';
 
-const calculate = ({ total, next, operation }, buttonName) => {
-  if (buttonName === '+/-') {
-    const negTotal = (total) * -1;
-    const negNext = (next) * -1;
-    return { total: negTotal, next: negNext };
+const calculate = (data, buttonName) => {
+  let { total, next, operation } = data;
+
+  switch (buttonName) {
+    case 'AC':
+      return { total: '', next: '', operation: '' };
+    case '+/-':
+    case '%':
+      operation = buttonName;
+      next = 0;
+      return operate(total, next, operation);
+    case '.':
+      if (total && !next) {
+        total += buttonName;
+      } else if (!total && !next) {
+        total = '0.';
+      } else if (total && operation) {
+        next += buttonName;
+      }
+      return { total, next, operation };
+    case '=':
+      return operate(total, next, operation);
+    case '0':
+    case '÷':
+    case 'X':
+    case '-':
+    case '+':
+      operation = buttonName;
+      return { total, next, operation };
+    case buttonName.match(/[0-9]|./).toString():
+      if (operation) {
+        next += buttonName;
+      } else if (!operation) {
+        total += buttonName;
+      }
+      return { total, next, operation };
+    default:
+      return 'impossible operation';
   }
-  if (buttonName === 'AC') {
-    return { total: 0, next: 0, operation: null };
-  }
-  if (buttonName === '.') {
-    return { total: '0.' };
-  }
-  if (buttonName === '%' || buttonName === '÷' || buttonName === 'X' || buttonName === '-' || buttonName === '+') {
-    const totalResult = operate(total, next, operation);
-    return { total: totalResult.toString() };
-  }
-  return false;
 };
 
 export default calculate;
