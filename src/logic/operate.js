@@ -1,27 +1,27 @@
 import Big from 'big.js';
 
-const operate = (numberOne, numberTwo, operation) => {
-  let total = new Big(numberOne);
-  const next = new Big(numberTwo);
+const operate = (number1, number2, operation) => {
+  let total = new Big(number1);
+  const next = new Big(number2);
 
   switch (operation) {
+    case '%':
+      total = total.times(0.01).toString();
+      break;
     case '+':
-      total = total.plus(next).toPrecision();
+      total = total.plus(next).toString();
       break;
     case '-':
-      total = total.minus(next).toPrecision();
+      total = total.minus(next).toString();
       break;
     case 'X':
-      total = total.times(next).toPrecision();
+      total = total.times(next).toString();
       break;
     case '÷':
-      total = numberTwo === '0' ? '0' : total.div(next).toPrecision();
-      break;
-    case '%':
-      total = total.times(0.01).toPrecision();
+      total = number2 === '0' ? '0' : total.div(next).toString();
       break;
     case '+/-':
-      total = total.times(-1).toPrecision();
+      total = total.times(-1).toString();
       break;
     default:
       return { total, next, operation };
