@@ -8,33 +8,33 @@ const ButtonPanel = ({ onClick }) => {
   return (
     <div id="panel" className="button-panel">
       <div id="group-1">
-        <Button onClick={clickHandler} name="AC" />
-        <Button onClick={clickHandler} name="+/-" />
-        <Button onClick={clickHandler} name="%" />
-        <Button onClick={clickHandler} name="÷" />
+        <Button onClick={clickHandler} buttonName="AC" />
+        <Button onClick={clickHandler} buttonName="+/-" />
+        <Button onClick={clickHandler} buttonName="%" />
+        <Button onClick={clickHandler} buttonName="÷" />
       </div>
       <div id="group-2">
-        <Button onClick={clickHandler} name="7" />
-        <Button onClick={clickHandler} name="8" />
-        <Button onClick={clickHandler} name="9" />
-        <Button onClick={clickHandler} name="X" />
+        <Button onClick={clickHandler} buttonName="7" />
+        <Button onClick={clickHandler} buttonName="8" />
+        <Button onClick={clickHandler} buttonName="9" />
+        <Button onClick={clickHandler} buttonName="X" />
       </div>
       <div id="group-3">
-        <Button onClick={clickHandler} name="4" />
-        <Button onClick={clickHandler} name="5" />
-        <Button onClick={clickHandler} name="6" />
-        <Button onClick={clickHandler} name="-" />
+        <Button onClick={clickHandler} buttonName="4" />
+        <Button onClick={clickHandler} buttonName="5" />
+        <Button onClick={clickHandler} buttonName="6" />
+        <Button onClick={clickHandler} buttonName="-" />
       </div>
       <div id="group-4">
-        <Button onClick={clickHandler} name="1" />
-        <Button onClick={clickHandler} name="2" />
-        <Button onClick={clickHandler} name="3" />
-        <Button onClick={clickHandler} name="+" />
+        <Button onClick={clickHandler} buttonName="1" />
+        <Button onClick={clickHandler} buttonName="2" />
+        <Button onClick={clickHandler} buttonName="3" />
+        <Button onClick={clickHandler} buttonName="+" />
       </div>
       <div id="group-5">
-        <Button onClick={clickHandler} name="0" />
-        <Button onClick={clickHandler} name="." />
-        <Button onClick={clickHandler} name="=" />
+        <Button onClick={clickHandler} buttonName="0" />
+        <Button onClick={clickHandler} buttonName="." />
+        <Button onClick={clickHandler} buttonName="=" />
       </div>
     </div>
   );

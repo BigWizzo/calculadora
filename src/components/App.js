@@ -14,28 +14,24 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(buttonName) {
-    this.setState((prevState) => calculate(prevState, buttonName));
+  handleClick(operation) {
+    const calcResult = calculate(this.state, operation);
+    this.setState(calcResult);
   }
 
   render() {
     const { total, next, operation } = this.state;
-    console.log(`${total} total`);
-    console.log(`${next} next`);
-    console.log(`${operation} operation`);
-
     let result = '0';
-
     if (next) {
       result = `${total}${operation}${next}`;
     } else if ((operation && operation !== '=') && total) {
       result = `${total}${operation}`;
     } else if ((total && !next) || (operation === '=')) {
-      result = total || '0';
+      result = total;
     }
 
     return (
-      <div id="app" className="app">
+      <div>
         <Display result={result} />
         <ButtonPanel onClick={this.handleClick} />
       </div>
