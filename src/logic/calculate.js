@@ -4,19 +4,13 @@ const calculate = (data, buttonName) => {
   let { total, next, operation } = data;
 
   switch (buttonName) {
-    case '÷':
-    case 'X':
-    case '-':
-    case '+':
-      operation = buttonName;
-      return { total, next, operation };
-    case '%':
+    case 'AC':
+      return { total: '', next: '', operation: '' };
     case '+/-':
+    case '%':
       operation = buttonName;
       next = 0;
       return operate(total, next, operation);
-    case 'AC':
-      return { total: '', next: '', operation: '' };
     case '.':
       if (total && !next) {
         total += buttonName;
@@ -26,7 +20,15 @@ const calculate = (data, buttonName) => {
         next += buttonName;
       }
       return { total, next, operation };
+    case '=':
+      return operate(total, next, operation);
     case '0':
+    case '÷':
+    case 'X':
+    case '-':
+    case '+':
+      operation = buttonName;
+      return { total, next, operation };
     case '1':
     case '2':
     case '3':
@@ -42,11 +44,9 @@ const calculate = (data, buttonName) => {
         total += buttonName;
       }
       return { total, next, operation };
-    case '=':
-      return operate(total, next, operation);
 
     default:
-      return data;
+      return 'impossible operation';
   }
 };
 
