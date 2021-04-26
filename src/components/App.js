@@ -31,7 +31,7 @@ class App extends React.Component {
     } else if ((operation && operation !== '=') && total) {
       result = `${total}${operation}`;
     } else if ((total && !next) || (operation === '=')) {
-      result = total;
+      result = total || '0';
     }
 
     return (
