@@ -36,7 +36,6 @@ const calculate = (data, buttonName) => {
         total += buttonName;
       }
       return { total, next, operation };
-
     default:
       return 'impossible operation';
   }
