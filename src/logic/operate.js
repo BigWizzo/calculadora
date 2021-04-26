@@ -26,7 +26,7 @@ const operate = (numberOne, numberTwo, operation) => {
     default:
       return { total, next, operation };
   }
-  return { total, next: '', operation: '=' };
+  return { total, next: '', operation: '' };
 };
 
 export default operate;

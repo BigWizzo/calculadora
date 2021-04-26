@@ -19,14 +19,18 @@ class App extends React.Component {
   }
 
   render() {
-    let result;
     const { total, next, operation } = this.state;
+    console.log(`${total} total`);
+    console.log(`${next} next`);
+    console.log(`${operation} operation`);
 
-    if ((total && next) || (!total && next)) {
-      result = next;
-    }
+    let result = '0';
 
-    if ((total && !next) || (operation === '=')) {
+    if (next) {
+      result = `${total}${operation}${next}`;
+    } else if ((operation && operation !== '=') && total) {
+      result = `${total}${operation}`;
+    } else if ((total && !next) || (operation === '=')) {
       result = total;
     }
 
