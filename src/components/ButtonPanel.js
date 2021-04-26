@@ -1,41 +1,41 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
+
+const groups = [
+  {
+    groupName: 'group1',
+    buttonValues: ['AC', '+/-', '%', '÷'],
+  },
+  {
+    groupName: 'group2',
+    buttonValues: ['7', '8', '9', 'x'],
+  },
+  {
+    groupName: 'group3',
+    buttonValues: ['4', '5', '6', '-'],
+  },
+  {
+    groupName: 'group4',
+    buttonValues: ['1', '2', '3', '+'],
+  },
+  {
+    groupName: 'group5',
+    buttonValues: ['0', '.', '='],
+  },
+];
 
 const ButtonPanel = ({ onClick }) => {
   const clickHandler = (buttonName) => onClick(buttonName);
 
   return (
-    <div id="panel" className="button-panel">
-      <div id="group-1">
-        <Button onClick={clickHandler} buttonName="AC" />
-        <Button onClick={clickHandler} buttonName="+/-" />
-        <Button onClick={clickHandler} buttonName="%" />
-        <Button onClick={clickHandler} buttonName="÷" />
-      </div>
-      <div id="group-2">
-        <Button onClick={clickHandler} buttonName="7" />
-        <Button onClick={clickHandler} buttonName="8" />
-        <Button onClick={clickHandler} buttonName="9" />
-        <Button onClick={clickHandler} buttonName="X" />
-      </div>
-      <div id="group-3">
-        <Button onClick={clickHandler} buttonName="4" />
-        <Button onClick={clickHandler} buttonName="5" />
-        <Button onClick={clickHandler} buttonName="6" />
-        <Button onClick={clickHandler} buttonName="-" />
-      </div>
-      <div id="group-4">
-        <Button onClick={clickHandler} buttonName="1" />
-        <Button onClick={clickHandler} buttonName="2" />
-        <Button onClick={clickHandler} buttonName="3" />
-        <Button onClick={clickHandler} buttonName="+" />
-      </div>
-      <div id="group-5">
-        <Button onClick={clickHandler} buttonName="0" />
-        <Button onClick={clickHandler} buttonName="." />
-        <Button onClick={clickHandler} buttonName="=" />
-      </div>
+    <div>
+      {groups.map((group) => (
+        <div key={group.groupName}>
+          {group.buttonValues.map((value) => (
+            <Button buttonName={value} key={value} onClick={clickHandler} />
+          ))}
+        </div>
+      ))}
     </div>
   );
 };
