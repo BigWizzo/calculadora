@@ -1,30 +1,32 @@
 import Big from 'big.js';
 
-const Operate = (numberOne, numberTwo, operation) => {
-  const number1 = Big(numberOne * 1);
-  const number2 = Big(numberTwo * 1);
-  let result;
+const operate = (numberOne, numberTwo, operation) => {
+  let total = new Big(numberOne);
+  const next = new Big(numberTwo);
 
   switch (operation) {
-    case '%':
-      result = (number1.times(number2)).div(100);
-      break;
     case '+':
-      result = number1.plus(number2);
+      total = total.plus(next).toPrecision();
       break;
     case '-':
-      result = number1.minus(number2);
+      total = total.minus(next).toPrecision();
       break;
-    case 'x':
-      result = number1.times(number2);
+    case 'X':
+      total = total.times(next).toPrecision();
       break;
     case '÷':
-      result = number1.div(number2);
+      total = numberTwo === '0' ? '0' : total.div(next).toPrecision();
+      break;
+    case '%':
+      total = total.times(0.01).toPrecision();
+      break;
+    case '+/-':
+      total = total.times(-1).toPrecision();
       break;
     default:
-      result = null;
+      return { total, next, operation };
   }
-  return (result.toString());
+  return { total, next: '', operation: '=' };
 };
 
-export default Operate;
+export default operate;

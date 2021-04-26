@@ -1,26 +1,31 @@
-import Operate from './operate';
+import operate from './operate';
 
-const Calculate = ({ total, next, operation }, buttonName) => {
+const calculate = (data, buttonName) => {
+  let { total, next, operation } = data;
+
   switch (buttonName) {
-    case 'AC':
-      return {
-        total: null,
-        next: null,
-        operation: null,
-      };
+    case '÷':
+    case 'X':
+    case '-':
+    case '+':
+      operation = buttonName;
+      return { total, next, operation };
+    case '%':
     case '+/-':
-      if (next) {
-        return {
-          total,
-          next: Operate(next, '-1', 'x'),
-          operation,
-        };
+      operation = buttonName;
+      next = 0;
+      return operate(total, next, operation);
+    case 'AC':
+      return { total: '', next: '', operation: '' };
+    case '.':
+      if (total && !next) {
+        total += buttonName;
+      } else if (!total && !next) {
+        total = '0.';
+      } else if (total && operation) {
+        next += buttonName;
       }
-      return {
-        total: Operate(total, '-1', 'x'),
-        next,
-        operation,
-      };
+      return { total, next, operation };
     case '0':
     case '1':
     case '2':
@@ -32,82 +37,17 @@ const Calculate = ({ total, next, operation }, buttonName) => {
     case '8':
     case '9':
       if (operation) {
-        return {
-          total,
-          next: next ? next + buttonName : buttonName,
-          operation,
-        };
+        next += buttonName;
+      } else if (!operation) {
+        total += buttonName;
       }
-      return {
-        total: total ? total + buttonName : buttonName,
-        next,
-        operation,
-      };
-
-    case '.':
-      if (operation) {
-        if (next) {
-          return {
-            total,
-            next: next + buttonName,
-            operation,
-          };
-        }
-        return {
-          total,
-          next: `0${buttonName}`,
-          operation,
-        };
-      }
-      if (total) {
-        return {
-          total: total + buttonName,
-          next,
-          operation,
-        };
-      }
-      return {
-        total: `0${buttonName}`,
-        next,
-        operation,
-      };
-
+      return { total, next, operation };
     case '=':
-      if (operation === '÷' && next === '0') {
-        return {
-          total: 'No zero division',
-          next: null,
-          operation: null,
-        };
-      } return {
-        total: next ? Operate(total, next, operation) : total,
-        next: null,
-        operation: null,
-      };
-    case '%':
-      if (total) {
-        return {
-          total: total * (next / 100),
-          next: null,
-          operation: null,
-        };
-      }
-      break;
+      return operate(total, next, operation);
+
     default:
-      if (operation) {
-        return {
-          total: next ? Operate(total, next, operation) : 'impossible',
-          next: null,
-          operation: buttonName,
-        };
-      }
-      return {
-        total,
-        next: null,
-        operation: buttonName,
-      };
+      return data;
   }
-  return { total, next, operation };
 };
 
-export default Calculate;
+export default calculate;
