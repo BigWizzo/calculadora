@@ -9,7 +9,8 @@ body {
 .app,
 .display,
 .button,
-.button-panel {
+.button-panel
+ {
   display: flex;
 }
 
@@ -62,4 +63,24 @@ body {
 
 .w-50 {
     width: 50%;
+}
+
+.nav-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-link {
+  color: blue;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: #111;
 }
