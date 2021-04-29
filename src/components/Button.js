@@ -4,13 +4,17 @@ const Button = ({
   buttonName, onClick,
 }) => {
   const handleClick = (buttonName) => onClick(buttonName);
-  let className = 'button button-color';
+  let className = 'button w-25 button-color';
   if (buttonName === '÷'
   || buttonName === 'X'
   || buttonName === '-'
   || buttonName === '+'
   || buttonName === '=') {
-    className = 'button button-color-right';
+    className = 'button w-25 button-color-right';
+  }
+
+  if (buttonName === '0') {
+    className = 'button w-50 button-color wide';
   }
 
   return (

@@ -41,7 +41,6 @@ body {
 }
 
 .button-panel .button {
-  width: 25%;
   color: #000;
   height: 100px;
   justify-content: center;
@@ -55,4 +54,12 @@ body {
 
 .button-color-right {
   background-color: #f5913f;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-50 {
+    width: 50%;
 }
