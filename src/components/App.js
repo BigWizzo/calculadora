@@ -31,7 +31,7 @@ class App extends React.Component {
     }
 
     return (
-      <div>
+      <div className="container">
         <Display result={result} />
         <ButtonPanel onClick={this.handleClick} />
       </div>
