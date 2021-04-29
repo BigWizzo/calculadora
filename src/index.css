@@ -6,11 +6,7 @@ body {
   text-align: center;
 }
 
-.app,
-.display,
-.button,
-.button-panel
-.nav {
+.flex{
   display: flex;
 }
 
@@ -20,9 +16,8 @@ body {
 }
 
 .content{
-    display: flex;
-    margin: 40px 60px;
-    justify-content: space-around;
+  margin: 40px 60px;
+  justify-content: space-around;
 }
 
 .some-math{
@@ -47,7 +42,6 @@ body {
 
 .group {
   height: 100px;
-  display: flex;
 }
 
 .button-panel .button {
@@ -76,14 +70,9 @@ body {
 
 .nav-wrapper{
   padding: 20px 50px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-/* .nav { */
-  /* display: flex; */
-/* } */
 
 .nav-link {
   color: blue;

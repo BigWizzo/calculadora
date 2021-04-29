@@ -34,7 +34,7 @@ class App extends React.Component {
     return (
       <>
         <Navbar />
-        <div className="content">
+        <div className="content flex">
           <div className="some-math">Let us Do Some Math</div>
           <div className="app">
             <Display result={result} />

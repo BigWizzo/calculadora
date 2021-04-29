@@ -28,9 +28,9 @@ const ButtonPanel = ({ onClick }) => {
   const clickHandler = (buttonName) => onClick(buttonName);
 
   return (
-    <div className="button-panel">
+    <div className="button-panel flex">
       {groups.map((group) => (
-        <div className="group" key={group.groupName}>
+        <div className="group flex" key={group.groupName}>
           {group.buttonValues.map((value) => (
             <Button buttonName={value} key={value} onClick={clickHandler} />
           ))}
