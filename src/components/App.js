@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './Navbar';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
@@ -31,9 +32,13 @@ class App extends React.Component {
     }
 
     return (
-      <div id="app" className="app">
-        <Display result={result} />
-        <ButtonPanel onClick={this.handleClick} />
+      <div className="app">
+        <Navbar />
+        <div className="some-math">Let us Do Some Math</div>
+        <div>
+          <Display result={result} />
+          <ButtonPanel onClick={this.handleClick} />
+        </div>
       </div>
     );
   }
