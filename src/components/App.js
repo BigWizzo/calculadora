@@ -35,7 +35,7 @@ class App extends React.Component {
       <>
         <Navbar />
         <div className="content flex">
-          <div className="some-math">Let us Do Some Math</div>
+          <h1 className="some-math">Let us Do Some Math</h1>
           <div className="app">
             <Display result={result} />
             <ButtonPanel onClick={this.handleClick} />
