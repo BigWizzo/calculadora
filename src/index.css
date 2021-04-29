@@ -5,3 +5,47 @@ body {
 .container{
   text-align: center;
 }
+
+.app,
+.display,
+.button,
+.button-panel {
+  display: flex;
+}
+
+.app {
+  width: 700px;
+  margin: 30px auto;
+  flex-direction: column;
+}
+
+.display {
+  background-color: #858594;
+  height: 100px;
+  color: #fff;
+  font-weight: bold;
+  padding: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 70px;
+}
+
+.button-panel {
+  flex-direction: column;
+  width: 100%;
+}
+
+.button-panel div {
+  height: 100px;
+  display: flex;
+}
+
+.button-panel .button {
+  width: 25%;
+  color: #000;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  background-color: #f5913f;
+}

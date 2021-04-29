@@ -28,11 +28,11 @@ const ButtonPanel = ({ onClick }) => {
   const clickHandler = (buttonName) => onClick(buttonName);
 
   return (
-    <div>
+    <div className="button-panel">
       {groups.map((group) => (
         <div key={group.groupName}>
           {group.buttonValues.map((value) => (
-            <Button buttonName={value} key={value} onClick={clickHandler} />
+            <Button buttonName={value} key={value} onClick={clickHandler} color="#e0e0e0" />
           ))}
         </div>
       ))}
