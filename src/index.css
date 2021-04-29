@@ -47,5 +47,12 @@ body {
   justify-content: center;
   align-items: center;
   border: 1px solid #000;
+}
+
+.button-color {
+  background-color: #adbac7;
+}
+
+.button-color-right {
   background-color: #f5913f;
 }
