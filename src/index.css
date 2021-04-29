@@ -10,14 +10,23 @@ body {
 .display,
 .button,
 .button-panel
- {
+.nav {
   display: flex;
 }
 
 .app {
   width: 700px;
-  margin: 30px auto;
   flex-direction: column;
+}
+
+.content{
+    display: flex;
+    margin: 40px 60px;
+    justify-content: space-around;
+}
+
+.some-math{
+  margin-top: 100px;
 }
 
 .display {
@@ -36,7 +45,7 @@ body {
   width: 100%;
 }
 
-.button-panel div {
+.group {
   height: 100px;
   display: flex;
 }
@@ -66,14 +75,15 @@ body {
 }
 
 .nav-wrapper{
+  padding: 20px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav {
-  display: flex;
-}
+/* .nav { */
+  /* display: flex; */
+/* } */
 
 .nav-link {
   color: blue;

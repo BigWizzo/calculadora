@@ -32,14 +32,16 @@ class App extends React.Component {
     }
 
     return (
-      <div className="app">
+      <>
         <Navbar />
-        <div className="some-math">Let us Do Some Math</div>
-        <div>
-          <Display result={result} />
-          <ButtonPanel onClick={this.handleClick} />
+        <div className="content">
+          <div className="some-math">Let us Do Some Math</div>
+          <div className="app">
+            <Display result={result} />
+            <ButtonPanel onClick={this.handleClick} />
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
