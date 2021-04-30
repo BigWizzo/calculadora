@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the Home Page 1`] = `
+Array [
+  <div
+    className="nav-wrapper flex"
+  >
+    <div
+      className="logo"
+    >
+      Math Magician
+    </div>
+    <div
+      className="nav flex"
+    >
+      <a
+        className="nav-link"
+        href="/"
+        onClick={[Function]}
+      >
+        Home 
+      </a>
+      <a
+        className="nav-link"
+        href="/calculator"
+        onClick={[Function]}
+      >
+        Calculator 
+      </a>
+      <a
+        className="nav-link"
+        href="/quote"
+        onClick={[Function]}
+      >
+        Quote 
+      </a>
+    </div>
+  </div>,
+  <div
+    className="quote"
+  >
+    Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding. –William Paul Thurston
+  </div>,
+]
+`;

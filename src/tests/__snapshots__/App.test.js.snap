@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the Calculator Page 1`] = `
+Array [
+  <div
+    className="nav-wrapper flex"
+  >
+    <div
+      className="logo"
+    >
+      Math Magician
+    </div>
+    <div
+      className="nav flex"
+    >
+      <a
+        className="nav-link"
+        href="/"
+        onClick={[Function]}
+      >
+        Home 
+      </a>
+      <a
+        className="nav-link"
+        href="/calculator"
+        onClick={[Function]}
+      >
+        Calculator 
+      </a>
+      <a
+        className="nav-link"
+        href="/quote"
+        onClick={[Function]}
+      >
+        Quote 
+      </a>
+    </div>
+  </div>,
+  <div
+    className="content flex"
+  >
+    <h1
+      className="some-math"
+    >
+      Let us Do Some Math
+    </h1>
+    <div
+      className="app"
+    >
+      <div
+        className="display flex"
+      >
+        0
+      </div>
+      <div
+        className="button-panel flex"
+      >
+        <div
+          className="group flex"
+        >
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            AC
+          </button>
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            +/-
+          </button>
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            %
+          </button>
+          <button
+            className="button flex w-25 button-color-right"
+            onClick={[Function]}
+            type="button"
+          >
+            ÷
+          </button>
+        </div>
+        <div
+          className="group flex"
+        >
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            7
+          </button>
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            8
+          </button>
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            9
+          </button>
+          <button
+            className="button flex w-25 button-color-right"
+            onClick={[Function]}
+            type="button"
+          >
+            X
+          </button>
+        </div>
+        <div
+          className="group flex"
+        >
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            4
+          </button>
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            5
+          </button>
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            6
+          </button>
+          <button
+            className="button flex w-25 button-color-right"
+            onClick={[Function]}
+            type="button"
+          >
+            -
+          </button>
+        </div>
+        <div
+          className="group flex"
+        >
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            1
+          </button>
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            2
+          </button>
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            3
+          </button>
+          <button
+            className="button flex w-25 button-color-right"
+            onClick={[Function]}
+            type="button"
+          >
+            +
+          </button>
+        </div>
+        <div
+          className="group flex"
+        >
+          <button
+            className="button flex w-50 button-color wide"
+            onClick={[Function]}
+            type="button"
+          >
+            0
+          </button>
+          <button
+            className="button flex w-25 button-color"
+            onClick={[Function]}
+            type="button"
+          >
+            .
+          </button>
+          <button
+            className="button flex w-25 button-color-right"
+            onClick={[Function]}
+            type="button"
+          >
+            =
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
