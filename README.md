@@ -51,7 +51,7 @@ To make sure the linters' checks using Github Actions work properly, you should 
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues and feature requests are always welcome!!!
 
 Feel free to check the [issues page](https://github.com/BigWizzo/calculadora/issues).
 
